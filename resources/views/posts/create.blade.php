@@ -19,7 +19,11 @@
                                 id="title" 
                                 name="title" 
                                 class="form-control"
+                                 value = {{ old('title') }}
                                 >
+                                <div class="text-danger">
+                                    {{ $errors->first('title') }}
+                                </div>
                             <div>
                                 <label for="body">
                                     本文
@@ -29,8 +33,13 @@
                                     name="body" 
                                     rows="4" 
                                     class="form-control"
-                                >
-                                </textarea>
+                                   
+                                >{{ old('body') }}</textarea>
+                                <div class="text-danger">
+                                    {{ $errors->first('body') }}
+                                </div>
+                                
+                                
                             </div>
                         </div>  
                         <div class="mt-5">
